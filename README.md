@@ -1,1 +1,6 @@
-# ag-auth-api
+# API com Token JWT
+
+Para inicializar
+```bash
+$ yarn dev
+```
