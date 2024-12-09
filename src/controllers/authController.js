@@ -37,15 +37,15 @@ const login = async (req, res) => {
   }
 };
 
-const home = async (req, res) => {
+const profile = async (req, res) => {
   try {
     const user = await User.findByPk(req.user.id, { attributes: ['id', 'email'] });
     if (!user) return res.status(404).json({ error: 'User not found' });
 
-    res.json({ message: 'User homepage', user });
+    res.json({ message: 'User profile', user });
   } catch (error) {
-    res.status(500).json({ error: 'Error fetching homepage' });
+    res.status(500).json({ error: 'Error fetching profile' });
   }
 };
 
-module.exports = { register, login, home };
+module.exports = { register, login, profile };
